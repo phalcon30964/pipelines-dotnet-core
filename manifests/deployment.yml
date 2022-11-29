@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dotnetpipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetpipeline
+  template:
+    metadata:
+      labels:
+        app: dotnetpipeline 
+    spec:
+      containers:
+        - name: dotnetpipeline 
+          image: containerregistrytraversal.azurecr.io/dotnetpipeline
+          ports:
+          - containerPort: 80
